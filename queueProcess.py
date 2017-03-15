@@ -20,7 +20,7 @@ def main(path_to_csv, starttime):
         date = date_time[0].strftime('%Y/%m/%d')
         time = date_time[0].strftime('%H:%M')
         date_time = ' '.join([str(date), str(time)])
-        print("Current time [ {0} ] , Event \"{1}\"".format(date_time, event))
+        print("Current time [ {0} ] , Event \"{1}\" Processed".format(date_time, event))
 
 if __name__ == "__main__":
     main(sys.argv[1], sys.argv[2])
