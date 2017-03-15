@@ -3,7 +3,7 @@
 ## Problem: Implement a time-based priority queue.
 
 Write a module to implement a queue based on time and priority. <br>
-This program can be used to schedule tasks at a given time.<br?
+This program can be used to schedule tasks at a given time.<br>
 
 ## Rules:<br>
 - Don't use any third party queue libraries<br>
