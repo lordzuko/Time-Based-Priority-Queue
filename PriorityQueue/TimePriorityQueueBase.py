@@ -27,10 +27,11 @@ class TimePriorityQueueBase:
 
     class _Item:
         """Lightweight composite to store priority queue items.
-           '_key': Tuple of (Time To Expire, Priority)
+           '_key': Tuple of (Time To Expire, Priority, Difference from start time)
            '_value': Task to Perform
            Time To Expire : datetime object
            Priority : int
+           Difference from start time: datetime object
         """
         __slots = '_key', '_value'
 
