@@ -16,7 +16,6 @@ Pass filename & starttime as parameters to program<br>
 ##E.g <br>
 Let's say file name is "queueProcess" <br>
 Let's say input file name is "inputs_events.csv" <br>
-<br>
 
 ` ./queueProcess input_events.csv  "2017/02/10 4:59" ` <br>
 
@@ -24,19 +23,17 @@ Let's say input file name is "inputs_events.csv" <br>
 Input to the program will be a file containing all the events in CSV format. <br>
 
 `
-event_name, time_to_expire , priority<br>
-"Task_#501", "2017/02/10 5:01"<br>
-"Task_#500", "2017/02/10 5:00"<br>
-"Task_#500", "2017/02/10 5:00" , 1<br>
+event_name, time_to_expire , priority\n
+"Task_#501", "2017/02/10 5:01"\n
+"Task_#500", "2017/02/10 5:00"\n>
+"Task_#500", "2017/02/10 5:00" , 1\n
 `
 <br>
 Note: Priority is an optional field.
 
 <br>
 ###Output:<br>
-`
-Current time [ 2017/02/10 5:00  ] , Event "Task_#500" Processed<br>
-Current time [ 2017/02/10 5:00  ] , Event "Task_#500" Processed<br>
-Current time [ 2017/02/10 5:01  ] , Event "Task_#501" Processed<br>
-`
+`Current time [ 2017/02/10 5:00  ] , Event "Task_#500" Processed\n
+Current time [ 2017/02/10 5:00  ] , Event "Task_#500" Processed\n
+Current time [ 2017/02/10 5:01  ] , Event "Task_#501" Processed\n`
 
