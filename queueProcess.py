@@ -14,6 +14,7 @@ def main(path_to_csv, starttime):
         list_key_value.append((k, v))
 
     heapq = HeapPriorityQueue(list_key_value)
+
     while heapq:
         date_time, event = heapq.remove_min()
         date = date_time[0].strftime('%Y/%m/%d')

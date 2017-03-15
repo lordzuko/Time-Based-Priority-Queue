@@ -11,6 +11,9 @@ class InputParser:
         self.path = path
 
     def convert_to_datetime(self, tte):
+        """
+            Convert time from given format to acceptable datetimeformat
+        """
         date, time = tte.split()
         year, month, day = date.split('/')
         date = '/'.join([year, month, day])
@@ -18,6 +21,10 @@ class InputParser:
         return datetime.strptime(tte, '%Y/%m/%d %H:%M')
 
     def parse_clean_csv(self):
+        """
+            Clean the csv data and create a dictionary to be used
+            in HeapPriorityQueue
+        """
         cleaned_data = []
         with open(self.path, 'r') as csvfile:
             rows = csv.DictReader(csvfile, delimiter=',')

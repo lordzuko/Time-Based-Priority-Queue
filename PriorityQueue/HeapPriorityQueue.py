@@ -60,7 +60,7 @@ class HeapPriorityQueue(TimePriorityQueueBase):
             self._heapify()
 
     def _heapify(self):
-        start = self._parent(len(self._data) - 1)
+        start = self._parent(len(self._data) - 1)       #start at PARENT of last leaf
         for j in range(start, -1, -1):
             self._downheap(j)
 
