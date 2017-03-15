@@ -14,13 +14,20 @@ def main(path_to_csv, starttime):
         list_key_value.append((k, v))
 
     heapq = HeapPriorityQueue(list_key_value)
+    prev_time = start_datetime
 
     while heapq:
         date_time, event = heapq.remove_min()
         date = date_time[0].strftime('%Y/%m/%d')
         time = date_time[0].strftime('%H:%M')
-        date_time = ' '.join([str(date), str(time)])
-        print("Current time [ {0} ] , Event \"{1}\" Processed".format(date_time, event))
+        date_time_str = ' '.join([str(date), str(time)])
+        if prev_time == date_time[0]:
+            print("Current time [ {0} ] , Event \"{1}\" Processed".format(date_time_str, event))
+        else:
+            minute_difference = int((date_time[0] - prev_time).total_seconds()//60)
+            print("-- After {} minute".format(str(minute_difference)))
+            print("Current time [ {0} ] , Event \"{1}\" Processed".format(date_time_str, event))
+            prev_time = date_time[0]
 
 if __name__ == "__main__":
     main(sys.argv[1], sys.argv[2])
